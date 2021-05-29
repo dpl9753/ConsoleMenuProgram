@@ -1,18 +1,14 @@
-				//////////////////////////////////////
-				/* ÄÄÇ»ÅÍ±³À°°ú  2020313232  ±èµ¿È£ */
-				//////////////////////////////////////
+#pragma once							// í—¤ë” íŒŒì¼ì„ ì¤‘ë³µìœ¼ë¡œ ì»´íŒŒì¼ë˜ì§€ ì•Šê²Œ ì„ í–‰ì ìœ¼ë¡œ ì²˜ë¦¬í•œë‹¤.
+#pragma warning(disable:4996)					// scanf ì˜¤ë¥˜ ë“±ì´ ì•ˆë‚˜ë„ë¡ ì²˜ë¦¬í•œë‹¤. 
+#include <stdio.h>						// printf() í•¨ìˆ˜ ë“±ì´ í¬í•¨ë˜ì–´ ìžˆëŠ” í—¤ë”íŒŒì¼
+#include <time.h>						// ì‹œê°„ì„ ë¶ˆëŸ¬ì˜¤ê¸° ìœ„í•œ í—¤ë” íŒŒì¼(ì‹œê°„ì€ srand() í•¨ìˆ˜ì—ì„œ í…Œì´ë¸”ì„ ë¶ˆëŸ¬ì˜¬ë•Œ ì‚¬ìš©ë¨)
+#include <string.h>						// ë¬¸ìžì—´ ì²˜ë¦¬ë¥¼ ìœ„í•œ í—¤ë” íŒŒì¼
 
-#pragma once							// Çì´õ ÆÄÀÏÀ» Áßº¹À¸·Î ÄÄÆÄÀÏµÇÁö ¾Ê°Ô ¼±ÇàÀûÀ¸·Î Ã³¸®ÇÑ´Ù.
-#pragma warning(disable:4996)			// scanf ¿À·ù µîÀÌ ¾È³ªµµ·Ï Ã³¸®ÇÑ´Ù. 
-#include <stdio.h>						// printf() ÇÔ¼ö µîÀÌ Æ÷ÇÔµÇ¾î ÀÖ´Â Çì´õÆÄÀÏ
-#include <time.h>						// ½Ã°£À» ºÒ·¯¿À±â À§ÇÑ Çì´õ ÆÄÀÏ(½Ã°£Àº srand() ÇÔ¼ö¿¡¼­ Å×ÀÌºíÀ» ºÒ·¯¿Ã¶§ »ç¿ëµÊ)
-#include <string.h>						// ¹®ÀÚ¿­ Ã³¸®¸¦ À§ÇÑ Çì´õ ÆÄÀÏ
+// declaration of CONSTANTS (ìƒìˆ˜ ì„ ì–¸)
+#define TRUE						1	// TRUEì— í•´ë‹¹í•˜ëŠ” ê°’ì€ 0ì„ ì œì™¸í•œ ëª¨ë“  ìˆ˜ì´ë‚˜, ì—¬ê¸°ì„œëŠ” ë³´íŽ¸ì ìœ¼ë¡œ 1ë¡œ ì„ ì–¸í•œë‹¤. (ì°¸ì˜ ê°’ì´ ì¶œë ¥ë  ë•ŒëŠ” 1ë¡œ ì¶œë ¥ëœë‹¤.)
+#define FALSE						0	// FALSEì— í•´ë‹¹í•˜ëŠ” ê°’ì€ 0ìž„
 
-// declaration of CONSTANTS (»ó¼ö ¼±¾ð)
-#define TRUE						1	// TRUE¿¡ ÇØ´çÇÏ´Â °ªÀº 0À» Á¦¿ÜÇÑ ¸ðµç ¼öÀÌ³ª, ¿©±â¼­´Â º¸ÆíÀûÀ¸·Î 1·Î ¼±¾ðÇÑ´Ù. (ÂüÀÇ °ªÀÌ Ãâ·ÂµÉ ¶§´Â 1·Î Ãâ·ÂµÈ´Ù.)
-#define FALSE						0	// FALSE¿¡ ÇØ´çÇÏ´Â °ªÀº 0ÀÓ
-
-// ¼±¾ðÇÑ ¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¸é ÇØ´ç ¸Þ´º·Î ÁøÀÔÇÏµµ·Ï ¸ÞÀÎ ÇÔ¼ö¿¡¼­ ±¸ÇöÇß´Âµ¥, ÀÌ¸¦ Á÷°üÀûÀ¸·Î Ç¥ÇöÇÏ±â À§ÇÏ¿© »ó¼ö·Î ¼±¾ðÇÔ.
+// ì„ ì–¸í•œ ìˆ«ìžë¥¼ ìž…ë ¥í•˜ë©´ í•´ë‹¹ ë©”ë‰´ë¡œ ì§„ìž…í•˜ë„ë¡ ë©”ì¸ í•¨ìˆ˜ì—ì„œ êµ¬í˜„í–ˆëŠ”ë°, ì´ë¥¼ ì§ê´€ì ìœ¼ë¡œ í‘œí˜„í•˜ê¸° ìœ„í•˜ì—¬ ìƒìˆ˜ë¡œ ì„ ì–¸í•¨.
 #define DIE_SIMULATION				1
 #define GAME_SHOW					2
 #define UPDOWN_GAME					3
@@ -22,29 +18,29 @@
 #define ABOUT						7
 #define EXIT						0
 
-// ¹¬Âîºü °ÔÀÓ¿¡¼­ ¹¬, Âî, ºü¿¡ ´ëÀÀÇÏ´Â »ó¼ö¸¦ 0, 1, 2·Î ¼±¾ðÇÑ´Ù. ÄÄÇ»ÅÍ°¡ ¹¬, Âî, ºü¸¦ °í¸¦ ¶§ 0~2 Áß¿¡¼­ ·£´ýÇÑ ¼ýÀÚ¸¦ »Ìµµ·Ï ±¸ÇöÇß±â ¶§¹®ÀÌ´Ù.
+// ë¬µì°Œë¹  ê²Œìž„ì—ì„œ ë¬µ, ì°Œ, ë¹ ì— ëŒ€ì‘í•˜ëŠ” ìƒìˆ˜ë¥¼ 0, 1, 2ë¡œ ì„ ì–¸í•œë‹¤. ì»´í“¨í„°ê°€ ë¬µ, ì°Œ, ë¹ ë¥¼ ê³ ë¥¼ ë•Œ 0~2 ì¤‘ì—ì„œ ëžœë¤í•œ ìˆ«ìžë¥¼ ë½‘ë„ë¡ êµ¬í˜„í–ˆê¸° ë•Œë¬¸ì´ë‹¤.
 #define ROCK						0
 #define SCISSORS					1
 #define PAPER						2
 
-// declaration of user defined functions (»ç¿ëÀÚ Á¤ÀÇ ÇÔ¼ö ¼±¾ð)
+// declaration of user defined functions (ì‚¬ìš©ìž ì •ì˜ í•¨ìˆ˜ ì„ ì–¸)
 
-int displayMainMenu();		// °¡Àå Ã³À½ È­¸éÀ» º¸¿©ÁÖ´Â ÇÔ¼ö·Î, »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ ¸Þ´º ¹øÈ£¸¦ ¹ÝÈ¯ÇØ ÁØ´Ù.
-void dieSimulation();		// ÁÖ»çÀ§ ½Ã¹Ä·¹ÀÌ¼Ç ÇÔ¼ö (ÁÖ»çÀ§ÀÇ ÇÕÀÌ 100À» ³Ñ´Â È½¼ö)
-void gameShow();			// °ÔÀÓ¼î ÇÔ¼ö (¹® 3°³Áß ÇÏ³ª¿¡ »óÇ°ÀÌ ÀÖÀ½, »ç¿ëÀÚ°¡ ¹®À» ÇÏ³ª ¼±ÅÃ, »çÈ¸ÀÚ°¡ »óÇ°ÀÌ ¾ø´Â ¹®À» º¸¿©ÁÜ, ¹Ù²Ü °ÍÀÎ°¡, ¹Ù²ÙÁö ¾ÊÀ» °ÍÀÎ°¡?)
-void upDownGame();			// ¾÷´Ù¿î °ÔÀÓ ÇÔ¼ö (1~100±îÁöÀÇ ¼ýÀÚ Áß¿¡¼­ 
-void wordGame();			// ´Ü¾î °ÔÀÓ ÇÔ¼ö (Çà¸Ç°ú ºñ½Á)
+int displayMainMenu();		// ê°€ìž¥ ì²˜ìŒ í™”ë©´ì„ ë³´ì—¬ì£¼ëŠ” í•¨ìˆ˜ë¡œ, ì‚¬ìš©ìžê°€ ìž…ë ¥í•œ ë©”ë‰´ ë²ˆí˜¸ë¥¼ ë°˜í™˜í•´ ì¤€ë‹¤.
+void dieSimulation();		// ì£¼ì‚¬ìœ„ ì‹œë®¬ë ˆì´ì…˜ í•¨ìˆ˜ (ì£¼ì‚¬ìœ„ì˜ í•©ì´ 100ì„ ë„˜ëŠ” íšŸìˆ˜)
+void gameShow();			// ê²Œìž„ì‡¼ í•¨ìˆ˜ (ë¬¸ 3ê°œì¤‘ í•˜ë‚˜ì— ìƒí’ˆì´ ìžˆìŒ, ì‚¬ìš©ìžê°€ ë¬¸ì„ í•˜ë‚˜ ì„ íƒ, ì‚¬íšŒìžê°€ ìƒí’ˆì´ ì—†ëŠ” ë¬¸ì„ ë³´ì—¬ì¤Œ, ë°”ê¿€ ê²ƒì¸ê°€, ë°”ê¾¸ì§€ ì•Šì„ ê²ƒì¸ê°€?)
+void upDownGame();			// ì—…ë‹¤ìš´ ê²Œìž„ í•¨ìˆ˜ (1~100ê¹Œì§€ì˜ ìˆ«ìž ì¤‘ì—ì„œ 
+void wordGame();			// ë‹¨ì–´ ê²Œìž„ í•¨ìˆ˜ (í–‰ë§¨ê³¼ ë¹„ìŠ·)
 
-// ¾Æ·¡ ³×°³´Â OX GameÀ» ±¸ÇöÇÒ ¶§ ÇÊ¿äÇÑ ÇÔ¼ö
-void OXGame();				// OX GAME ±âº» ÇÔ¼ö
-void displayNumber(char strOX[]);		// È­¸é¿¡ ¼ýÀÚµéÀ» Á¤µ·µÇ°Ô Ãâ·ÂÇÏ±â À§Àœ ÇÔ¼ö
-void playOX(char player, char str[]);	// OX °ÔÀÓÀ» ÁøÇàÇÏ´Â µ¥¿¡ ÇÊ¿äÇÑ ÇÔ¼ö
-char winCheck(char str[]);	// ½Â¸®ÀÚ°¡ ³ª¿À´Â °æ¿ì¸¦ Ã¼Å©ÇØÁÖ´Â ÇÔ¼ö
+// ì•„ëž˜ ë„¤ê°œëŠ” OX Gameì„ êµ¬í˜„í•  ë•Œ í•„ìš”í•œ í•¨ìˆ˜
+void OXGame();				// OX GAME ê¸°ë³¸ í•¨ìˆ˜
+void displayNumber(char strOX[]);		// í™”ë©´ì— ìˆ«ìžë“¤ì„ ì •ëˆë˜ê²Œ ì¶œë ¥í•˜ê¸° ìœ„Âœ í•¨ìˆ˜
+void playOX(char player, char str[]);	// OX ê²Œìž„ì„ ì§„í–‰í•˜ëŠ” ë°ì— í•„ìš”í•œ í•¨ìˆ˜
+char winCheck(char str[]);	// ìŠ¹ë¦¬ìžê°€ ë‚˜ì˜¤ëŠ” ê²½ìš°ë¥¼ ì²´í¬í•´ì£¼ëŠ” í•¨ìˆ˜
 
-// ¾Æ·¡ ³×°³´Â ¹¬Âîºü °ÔÀÓÀ» ±¸ÇöÇÒ ¶§ ÇÊ¿äÇÑ ÇÔ¼ö
-void rockScissorsPaperGame();	// ¹¬Âîºü °ÔÀÓ ±âº» ÇÔ¼ö
-void RSPDisplay();				// Ã³À½ º¸ÀÌ´Â È­¸éÀ» Ãâ·ÂÇÒ ¶§ ¾²ÀÌ´Â ÇÔ¼ö
-void computerWin(char str[]);	// °¡À§¹ÙÀ§º¸¿¡¼­ ÄÄÇ»ÅÍ°¡ ÀÌ°åÀ» °æ¿ì ½ÇÇàµÇ´Â ÇÔ¼ö 
-void userWin(char str[]);		// °¡À§¹ÙÀ§º¸¿¡¼­ »ç¿ëÀÚ°¡ ÀÌ°åÀ» °æ¿ì ½ÇÇàµÇ´Â ÇÔ¼ö
+// ì•„ëž˜ ë„¤ê°œëŠ” ë¬µì°Œë¹  ê²Œìž„ì„ êµ¬í˜„í•  ë•Œ í•„ìš”í•œ í•¨ìˆ˜
+void rockScissorsPaperGame();	// ë¬µì°Œë¹  ê²Œìž„ ê¸°ë³¸ í•¨ìˆ˜
+void RSPDisplay();				// ì²˜ìŒ ë³´ì´ëŠ” í™”ë©´ì„ ì¶œë ¥í•  ë•Œ ì“°ì´ëŠ” í•¨ìˆ˜
+void computerWin(char str[]);	// ê°€ìœ„ë°”ìœ„ë³´ì—ì„œ ì»´í“¨í„°ê°€ ì´ê²¼ì„ ê²½ìš° ì‹¤í–‰ë˜ëŠ” í•¨ìˆ˜ 
+void userWin(char str[]);		// ê°€ìœ„ë°”ìœ„ë³´ì—ì„œ ì‚¬ìš©ìžê°€ ì´ê²¼ì„ ê²½ìš° ì‹¤í–‰ë˜ëŠ” í•¨ìˆ˜
 
-void about();					// ÇÁ·Î±×·¥ Á¤º¸¸¦ ¶ç¿öÁÖ´Â ÇÔ¼ö
+void about();					// í”„ë¡œê·¸ëž¨ ì •ë³´ë¥¼ ë„ì›Œì£¼ëŠ” í•¨ìˆ˜
